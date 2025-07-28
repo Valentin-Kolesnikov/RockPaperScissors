@@ -1,4 +1,4 @@
-Rock Paper Scissors (Console game)
+Rock Paper Scissors (Console game)  
 A simple Python implementation of the classic Rock Paper Scissors game. Play against one or two computer opponents in a text-based interface.  
 
 Features:
