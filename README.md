@@ -11,10 +11,7 @@ Features:
 How to Play:
 1. At the start, choose whether you want to play.
 2. Select the number of players: 1 (only you against the computer) or 2 (you against two computers)
-3. Choose a move:
-1) Rock
-2) Paper
-3) Scissors
+3. Choose a move: a rock - number 1; a paper - number 2; scissors - number 3.
 4. The game continues until victory in each round; a draw restarts the move.
 
 I must finalize the project, make six-rounds mode and an announcement of the end of the game with the announcement of the winner.
