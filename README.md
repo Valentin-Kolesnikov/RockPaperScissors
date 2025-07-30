@@ -4,8 +4,8 @@ A simple Python implementation of the classic Rock Paper Scissors game. Play aga
 ## Features:
 - Terminal-based gameplay.
 - Play against one computer or two computers.
-- Three rounds with repeated draws until someone wins.
-- Randomized computer moves.
+- Any number of rounds with repeated draws until someone wins.
+- Randomized (used math.ceil; secrets.choice from the list which will be created by random.uniform) computer moves.
 - Clear scoring system and round tracking.
 
 ## How to Play:
@@ -16,4 +16,4 @@ A simple Python implementation of the classic Rock Paper Scissors game. Play aga
 5. The game continues until victory in each round; a draw restarts the move.
 6. The announcement of the winner will keep track of who has what points, and then give the opportunity to win back (even to computers, if the player has definitely lost) if someone has a draw.
 
-## I've completed the project! If I find errors, I will fix them as small fixes. However however, they should not be
+## I've completed the project! If I find errors, I will fix them as small fixes. However, they should not be
