@@ -16,4 +16,4 @@ A simple Python implementation of the classic Rock Paper Scissors game. Play aga
 5. The game continues until victory in each round; a draw restarts the move.
 6. The announcement of the winner will keep track of who has what points, and then give the opportunity to win back (even to computers, if the player has definitely lost) if someone has a draw.
 
-I've almost completed the project.
+# I've completed the project! if I find errors, I will fix them as small fixes. However however, they should not be
