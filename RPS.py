@@ -426,3 +426,6 @@ elif computer == max_score:                                 #2> 1 and 3
 
 elif computer3000 == max_score:                             #3> 1 and 2
     print("You lost! The computer3000 took 1st place. Congratulate him!")
+
+
+input("\nThank you for playing. Press Enter to exit...")
