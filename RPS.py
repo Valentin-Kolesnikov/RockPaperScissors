@@ -405,7 +405,7 @@ elif player == computer3000 == max_score:                                # 1==3 
     if player == max_score:                               # 1==
         print("Congratulations! You took 1st place!")
     elif computer3000 == max_score:                             # 3==
-        print("You lost! The computer took 1st place. Congratulate him!")
+        print("You lost! The computer3000 took 1st place. Congratulate him!")
 
 elif computer == computer3000 == max_score:                 #2==3 > 1
     print("You should win back!")
