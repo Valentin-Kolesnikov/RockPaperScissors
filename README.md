@@ -1,6 +1,10 @@
 # Rock Paper Scissors (Console game)  
 A simple Python implementation of the classic Rock Paper Scissors game. Play against one or two computer opponents in a text-based interface.  
 
+## Important clarification!!!  
+
+The `.exe` file does not have viruses. It was created for convenience. I made this file thanks to `python -m PyInstaller --onefile ...`. If you do not trust the `.exe` file, I recommend you to use the `.py` file.
+
 ## Features:
 - Terminal-based gameplay.
 - Play against one computer or two computers.
@@ -9,12 +13,12 @@ A simple Python implementation of the classic Rock Paper Scissors game. Play aga
 - Clear scoring system and round tracking.
 
 ## How to Play:
-1. Open the .exe file or .py file if you have an interpretator.
+1. Open the `.exe` file or `.py` file.
 2. At the start, choose whether you want to play.
-3. Select the number of players: 1 (you against the computer) or 2 (you against two computers).
+3. Select the number of players: `1` (you against the computer) or `2` (you against two computers).
 4. You can choose any number of rounds you want.
-5. Choose a move: a rock - number 1; a paper - number 2; scissors - number 3.
+5. Choose a move: a rock - number `1`; a paper - number `2`; scissors - number `3`.
 6. The game continues until victory in each round; a draw restarts the move.
 7. The announcement of the winner will keep track of who has what points, and then give the opportunity to win back (even to computers, if the player has definitely lost) if someone has a draw.
 
-## I've completed the project! If I find errors, I will fix them as small fixes. However, they should not be
+### I've completed the project! If I find errors, I will fix them as small fixes. However, they should not be
