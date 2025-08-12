@@ -1,27 +1,28 @@
 from secrets import choice
 from time import sleep
-from random import uniform
+from random import uniform, choice
 from math import ceil
 from sys import exit
+import os
 
 def defcomputer():
     computer1 = []
     for i in range(3):
-        number = uniform(0.000001, 3.0)
-        numbers = ceil(number)
+        number = uniform(0.5, 3.49)
+        numbers = round(number)
         computer1.append(numbers)
     return choice(computer1)
 
 def defcomputer1():
-    computer2 = []
-    for i in range(3):
+    for i in range(1000):
+        computer2 = []
         number1 = uniform(0.000001, 3.0)
         numbers1 = ceil(number1)
         computer2.append(numbers1)
     return choice(computer2)
     
 def gamestart(rounds, someplayers):
-    print(f"\n\nRound {rounds}!!!\n")
+    print(f"Round {rounds}!!!\n")
     sleep(1)
 
     while True:
@@ -170,7 +171,7 @@ def final(player, computer, computer3000, finale):
         print(f"Computer chose {computer1}; Computer3000 chose {computer2}")
         sleep(1)
 
-        print(f"\nPlayer: {player}; Computer: {computer}; Computer3000: {computer3000}\n")   
+        print(f"\nPlayer: {player}; Computer: {computer}; Computer3000: {computer3000}\n\n\n")   
         sleep(1)
         return player, computer, computer3000
         
@@ -185,11 +186,14 @@ def final(player, computer, computer3000, finale):
         print(f"Computer chose: {computer1}")
         sleep(1)
 
-        print(f'\nComputer: {computer}; Player: {player}\n')
+        print(f'\nPlayer: {player}; Computer: {computer}\n\n\n')
         sleep(1)
         return player, computer
     
     elif finale == 213:
+        print(f"Round LAST!!!\n")
+        sleep(1)
+
         while True:
             one = int(input("\nRock: 1; Paper: 2; Scissors: 3. Choose: "))
             computer2 = defcomputer1()
@@ -231,11 +235,14 @@ def final(player, computer, computer3000, finale):
         print(f"Computer3000 chose: {computer2}")
         sleep(1)
 
-        print(f'\nComputer3000: {computer3000}; Player: {player}')
+        print(f'\nPlayer: {player}; Computer3000: {computer3000}\n\n\n')
         sleep(1)
         return player, computer3000
     
     elif finale == 223:
+        print(f"Round LAST!!!\n")
+        sleep(1)
+
         while True:
             computer1 = defcomputer()
             computer2 = defcomputer1()
@@ -277,20 +284,21 @@ def final(player, computer, computer3000, finale):
         print(f"Computer chose: {computer1}; Computer3000 chose: {computer2}")
         sleep(1)
 
-        print(f'\nComputer: {computer}; Computer3000: {computer3000}')
+        print(f'\nComputer: {computer}; Computer3000: {computer3000}\n\n\n')
         sleep(1)
         return computer, computer3000
 
-entrance = int(input("\nLet's play Rock Paper Scissors! Yes - 1 or No - 0: "))
+
+entrance = int(input("Let's play Rock Paper Scissors! Yes - 1 or No - 0: "))
 sleep(1) 
-if entrance == 0:
-    exit("Okay. Good luck")
-elif entrance == 1:
+
+if entrance == 1:
     someplayers = int(input("\n1 player or 2 players?: "))
     sleep(1)
 
     rounds = int(input("\nHow many rounds do you want?: "))
-    print("")
+    sleep(1)
+    os.system("cls")
     sleep(1)
 
     player = 0
@@ -310,7 +318,7 @@ elif entrance == 1:
             print(f"Computer chose: {computer1}")
             sleep(1)
 
-            print(f'\nComputer: {computer}; Player: {player}\n')
+            print(f'\nPlayer: {player}; Computer: {computer}\n\n\n')
             sleep(1)
 
         elif someplayers == 2:
@@ -333,50 +341,54 @@ elif entrance == 1:
             print(f"Computer chose {computer1}; Computer3000 chose {computer2}")
             sleep(1)
 
-            print(f"\nPlayer: {player}; Computer: {computer}; Computer3000: {computer3000}\n")   
+            print(f"\nPlayer: {player}; Computer: {computer}; Computer3000: {computer3000}\n\n\n")   
             sleep(1)
-
+else:
+    input("\nOkay. Good luck. Press Enter to exit...")
+    exit()
 
 
 max_score = max(player, computer, computer3000)
-if player == computer == computer3000:             # 1==2==3
+if player == computer == computer3000:
     print("You should win back!\n")
     answer = 3
     player, computer, computer3000 = final(player, computer, computer3000, answer)
     max_score = max(player, computer, computer3000)
 
-    if player == computer == max_score:                                  # 1==2 and 1>3
-        print("You should win back again!")
+    if player == computer == max_score:
+        print("You should win back again!\n")
         answer = 212
         player, computer = final(player, computer, None, answer)
         max_score = max(player, computer)
 
-        if player == max_score:                               # 1==
+        if player == max_score:
             print("Congratulations! You took 1st place!")
-        elif computer == max_score:                             # 2==
+        elif computer == max_score:
             print("You lost! The computer took 1st place. Congratulate him!")
 
-    elif player == computer3000 == max_score:                        # 1==3 and 1>2
+    elif player == computer3000 == max_score:
+        print("You should win back again!\n")
         answer = 213
         player, computer3000 = final(player, None, computer3000, answer)
         max_score = max(player, computer3000)
 
-        if player == max_score:                           # 1==
+        if player == max_score:
             print("Congratulations! You took 1st place!")
-        elif computer3000 == max_score:                         # 3==
+        elif computer3000 == max_score:
             print("You lost! The computer took 1st place. Congratulate him!")
 
-    elif computer == computer3000 == max_score:                          #2==3 > 1
+    elif computer == computer3000 == max_score:
+        print("You should win back again!\n")
         answer = 223
         computer, computer3000 = final(None, computer, computer3000, answer)
         max_score = max(computer, computer3000)
 
-        if computer == max_score:                         #2==
+        if computer == max_score:
             print("You lost! The computer took 1st place. Congratulate him!")
-        elif computer3000 == max_score:                       #3==
+        elif computer3000 == max_score:
             print("You lost! The computer3000 took 1st place. Congratulate him!")
     
-    elif player == max_score:                               #1> 2 and 3
+    elif player == max_score:
         print("Congratulations! You took 1st place!")
     
     elif computer == max_score:
@@ -385,46 +397,46 @@ if player == computer == computer3000:             # 1==2==3
     elif computer3000 == max_score:
         print("You lost! The computer3000 took 1st place. Congratulate him!")
 
-elif player == computer == max_score:                       # 1==2 and 1>3
-    print("You should win back!")
+elif player == computer == max_score:
+    print("You should win back!\n")
     answer = 212
     player, computer = final(player, computer, None, answer)
     max_score = max(player, computer)
 
-    if player == max_score:                                   # 1==
+    if player == max_score:
         print("Congratulations! You took 1st place!")
-    elif computer == max_score:                                 # 2==
+    elif computer == max_score:
         print("You lost! The computer took 1st place. Congratulate him!")
 
-elif player == computer3000 == max_score:                                # 1==3 and 1>2
-    print("You should win back!")
+elif player == computer3000 == max_score:
+    print("You should win back!\n")
     answer = 213
     player, computer3000 = final(player, None, computer3000, answer)
     max_score = max(player, computer3000)
 
-    if player == max_score:                               # 1==
+    if player == max_score:
         print("Congratulations! You took 1st place!")
-    elif computer3000 == max_score:                             # 3==
+    elif computer3000 == max_score:
         print("You lost! The computer3000 took 1st place. Congratulate him!")
 
-elif computer == computer3000 == max_score:                 #2==3 > 1
-    print("You should win back!")
+elif computer == computer3000 == max_score:
+    print("You should win back!\n")
     answer = 223
     computer, computer3000 = final(None, computer, computer3000, answer)
     max_score = max(computer, computer3000)
 
-    if computer == max_score:                             #2==
+    if computer == max_score:
         print("You lost! The computer took 1st place. Congratulate him!")
-    elif computer3000 == max_score:                           #3==
+    elif computer3000 == max_score:
         print("You lost! The computer3000 took 1st place. Congratulate him!")
 
-elif player == max_score:                                   #1> 2 and 3
+elif player == max_score:
         print("Congratulations! You took 1st place!")
     
-elif computer == max_score:                                 #2> 1 and 3
+elif computer == max_score:
     print("You lost! The computer took 1st place. Congratulate him!")
 
-elif computer3000 == max_score:                             #3> 1 and 2
+elif computer3000 == max_score:
     print("You lost! The computer3000 took 1st place. Congratulate him!")
 
 
